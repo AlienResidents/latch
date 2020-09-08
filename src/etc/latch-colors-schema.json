@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Latch Colors Schema",
+  "description": "Latch Available Colors",
+  "type": "array",
+  "items": {
+    "color": {
+      "description": "The color used for a particular latch.",
+      "type": "enum",
+      "anyOf": [
+        "blue",
+        "orange",
+        "green",
+        "red",
+        "purple",
+        "brown",
+        "pink",
+        "grey",
+        "olive",
+        "teal"
+      ]
+    },
+  }
+}

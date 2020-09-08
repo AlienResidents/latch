@@ -1,0 +1,148 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Latch Schema",
+  "description": "The Main Latch Schema",
+  "type": "object",
+  "properties": {
+    "state": {
+      "description": "The status of the node.",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 3,
+    },
+    "chroot_base_dir": {
+      "description": "The status of the node.",
+      "type": "string"
+    },
+    "thread_comms": {
+      "description": "Defining whether or not we use UDS or INET for socket comms for forks.pm. Default: UDS",
+      "type": "enum",
+      "anyOf": [
+        "UDS",
+        "INET"
+      ]
+    },
+    "debug": {
+      "description": "Enable or disable debug (default: 0)",
+      "type": "boolean"
+    },
+    "avail_colors": {
+      "type": "enum",
+        "anyOf": [
+          "blue",
+          "orange",
+          "green",
+          "red",
+          "purple",
+          "brown",
+          "pink",
+          "grey",
+          "olive",
+          "teal"
+      ]
+    },
+    "autoload_cfg_changes": {
+      "description": "If we notice our config change, reload or not. default: true",
+      "type": "boolean"
+    },
+    "hostname": {
+      "description": "The hostname of this server",
+      "type": "string",
+      "format": "hostname"
+    },
+    "port": {
+      "description": "The IPv4 Address of this server",
+      "type": "number",
+    },
+    "chrootBase": {
+      "description": "The chroot base directory for all other chroots",
+      "type": "string",
+    },
+    "ipv4_address": {
+      "description": "The IPv4 Address of this server",
+      "type": "string",
+      "format": "ipv4"
+    },
+    "domain": {
+      "description": "DNS domain for resolver lookups",
+      "type": "string",
+      "format": "hostname"
+    },
+    "logdir": {
+      "description": "The log directory location, not required, but could be nice",
+      "type": "string",
+      "pattern": "^/+$"
+    },
+    "ourLatches": {
+      "description": "The Latch details for this Latch Node",
+      "type": "array",
+      "items": {
+        "description": "Latch Bootstrap Node List",
+        "type": "object",
+        "properties": {
+          "latch": {
+            "type": "string"
+          },
+          "ipv4_address": {
+            "type": "string",
+            "format": "ipv4"
+          },
+          "port": {
+            "type": "number"
+          },
+          "color": {
+            "enum": [
+              "blue",
+              "orange",
+              "green",
+              "red",
+              "purple",
+              "brown",
+              "pink",
+              "grey",
+              "olive",
+              "teal"
+            ]
+          },
+          "proto": {
+            "type": "string"
+          },
+          "vcs_ver": {
+            "type": "number"
+          },
+          "chroot": {
+            "description": "The path where the chroot for a particular latch resides under the chrootBase",
+            "type": "string",
+            "pattern": "^/latch/+$"
+          },
+          "chroot_scripts": {
+            "description": "The path for running latch specific scripts.",
+            "type": "string",
+            "pattern": "^/latch/+$"
+          },
+          "controls": {
+            "description": "How to control the latches",
+            "$ref": "http://localhost:80/api/latch-controls-schema.json"
+          }
+        },
+        "required": [
+          "latch",
+          "port",
+          "proto",
+          "ipv4_address",
+          "color",
+          "vcs_ver",
+          "path"
+        ]
+      }
+    }
+  },
+  "boots": {
+    "description": "Latch Bootstrap Peers",
+    "$ref": "http://localhost:80/api/latch-bootstrap-schema.json"
+  }
+  "latchNodes": {
+    "description": "Latch Node Peers",
+    "$ref": "http://localhost:80/api/latch-nodes-schema.json"
+  }
+}

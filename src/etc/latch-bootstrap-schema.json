@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Latch Bootstrap Schema",
+  "description": "Latch Bootstrap Node for New or Re-joining Nodes",
+  "type": "array",
+  "items": {
+    "description": "Latch Bootstrap Node List",
+    "type": "object",
+    "properties": {
+      "title": "Latch Node Attributes",
+      "ipv4_address": {
+        "description": "IP address of node if known",
+        "type": "string",
+        "format": "ipv4"
+      },
+      "port": {
+        "description": "The revision we reference for nodes updates",
+        "type": "number"
+      },
+      "required": ["port"]
+    }
+  }
+}

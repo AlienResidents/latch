@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "my_self": {
+    "state": 0,
+    "thread_comms": "UDS",
+    "debug": 1,
+    "autoload_cfg_changes": 1,
+    "hostname": "centie-6",
+    "domain": "latch.cdd.net.au",
+    "logdir": "/tmp/latch/log",
+    "chroot_basedir": "/latch/chroots",
+    "latch_port": "12345",
+    "our_ipv4_address": "0.0.0.0",
+    "port": 80,
+    "healthInterval": 30,
+    "availColors": [
+      "red",
+      "brown",
+      "pink",
+      "grey",
+      "olive",
+      "teal"
+    ],
+    "ourLatches": [
+      { "latch": "foo",
+        "ipv4_address": "0.0.0.0",
+        "port": 10080,
+        "proto": "TCP",
+        "color": "blue",
+        "vcs_ver": 1.0,
+        "chroot": "/foo/blue-1.0",
+        "chroot_scripts": "/foo/blue-1.0",
+        "base_dir": ",",
+        "controls": {
+          "command": "command",
+          "start": "start",
+          "stop": "stop"
+        }
+      },
+      { "latch": "foo",
+        "ipv4_address": "0.0.0.0",
+        "port": 10081,
+        "proto": "TCP",
+        "color": "green",
+        "vcs_ver": 1.1,
+        "chroot": "/foo/green-1.1",
+        "chroot_scripts": "/foo/green-1.1",
+        "base_dir": ",",
+        "controls": {
+          "command": "command",
+          "start": "start",
+          "stop": "stop"
+        }
+      },
+      { "latch": "bar",
+        "ipv4_address": "0.0.0.0",
+        "port": 10082,
+        "proto": "TCP",
+        "color": "orange",
+        "vcs_ver": 1.2,
+        "chroot": "/foo/orange-1.2",
+        "chroot_scripts": "/foo/orange-1.2",
+        "base_dir": ",",
+        "controls": {
+          "command": "command",
+          "start": "start",
+          "stop": "stop"
+        }
+      },
+      { "latch": "bar",
+        "ipv4_address": "0.0.0.0",
+        "port": 10082,
+        "proto": "TCP",
+        "color": "purple",
+        "vcs_ver": 1.2,
+        "chroot": "/foo/purple-1.2",
+        "chroot_scripts": "/foo/purple-1.2",
+        "base_dir": ",",
+        "controls": {
+          "command": "command",
+          "start": "start",
+          "stop": "stop"
+        }
+      }
+    ]
+  },
+  "boots": [
+    {
+      "hostname": "centie-6-2",
+      "port": 80
+    },
+    {
+      "ipv4_address": "192.168.9.6",
+      "port": 80
+    },
+    {
+      "ipv4_address": "192.168.9.7",
+      "port": 80
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Latch Nodes Schema",
+  "description": "Valid Attributes for Latch Nodes",
+  "type": "array",
+  "items": {
+    "description": "Latch Node List",
+    "type": "object",
+    "items": {
+      "title": "Latch Node Attributes",
+      "type": "object",
+      "properties": {
+        "ipv4_address": {
+          "description": "IP address of node if known",
+          "type": "string",
+          "format": "ipv4"
+        },
+        "port": {
+          "description": "The revision we reference for nodes updates",
+          "type": "number"
+        },
+        "state": {
+          "description": "The state of the node",
+          "type": "boolean"
+        },
+        "rev": {
+          "description": "The revision we reference for nodes updates",
+          "type": "number"
+        },
+        "lastAction": {
+          "description": "The last action the node communicated",
+          "type": "string"
+        },
+        "theirTimestamp": {
+          "description": "The remote node's timestamp + nanoseconds",
+          "type": "number"
+        },
+        "ourTimestamp": {
+          "description": "Our node's timestamp + nanoseconds",
+          "type": "number"
+        }
+      }
+    }
+  }
+}

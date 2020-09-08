@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Latch Controls Schema",
+  "description": "Latch Control Options",
+  "type": "object",
+  "properties": {
+    "title": "Latch Control",
+    "command": {
+      "description": "The command used to control the Latch",
+      "type": "string"
+    },
+    "start": {
+      "description": "Start method for command",
+      "type": "string"
+    },
+    "stop": {
+      "description": "Stop method for command",
+      "type": "string"
+    },
+    "reload": {
+      "description": "Reload method for command",
+      "type": "string"
+    },
+    "restart": {
+      "description": "Restart method for command",
+      "type": "string"
+    },
+    "status": {
+      "description": "Status method for command",
+      "type": "string"
+    },
+    "required": [
+      "command",
+      "start",
+      "stop",
+    ]
+  }
+}
